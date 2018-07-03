@@ -42,7 +42,7 @@ function HDWalletProvider(mnemonic, provider_url, address_index=0, num_addresses
     }
   }));
   this.engine.addProvider(new FiltersSubprovider());
-  this.engine.addProvider(new ProviderSubprovider(new Web3.providers.HttpProvider(provider_url)));
+  this.engine.addProvider(new ProviderSubprovider(new Web3.providers.WebsocketProvider(provider_url)));
   this.engine.start(); // Required by the provider engine.
 };
 
